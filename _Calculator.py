@@ -27,15 +27,15 @@
 
 
 # =========================================
-# Advance Calculator made with Python
+# Advanced calculator made with Python
 # =========================================
 # print("\n\n"+"Welcome to the Python calculator".center(100, " "))
 # print("I am the best calculator. You can trust me ☻\n\n".center(100, " "))
 
 # a = int(input("first operand?  "))
-# o = input("operator?  ")
+# o = input("operator?  ").lower()
 # b = int(input("second operand?  "))
-# o = o.lower()
+
 
 # if o == "+" or o == "plus" or o.startswith("a"):
 #     print(a, "+", b, "=", a + b)
