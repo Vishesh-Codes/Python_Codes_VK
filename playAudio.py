@@ -7,7 +7,7 @@ pygame.init()
 pygame.mixer.init()
 
 while True:
-    ans = input("which song would you like to listen a song? --> ").lower()
+    ans = input("which song would you like to listen? --> ").lower()
     if ans.startswith("nai"):
         pygame.mixer.music.load("../../../../6.     AUDIO/Ringtones/NAINA NIHARE Ringtone flex start.mp3")
         pygame.mixer.music.play()
