@@ -2,8 +2,10 @@
 # Exercise-8 : Folder Prettifier
 #----------------------------------------------
 import os
+current_working_dir = os.getcwd()
 
 def Folder_Prettifier(path, exceptions, format):
+    os.chdir(path)
     file_name_counter = 1
     dir_items = os.listdir(path)
 
@@ -13,31 +15,26 @@ def Folder_Prettifier(path, exceptions, format):
         if os.path.isfile(item_path) == True:
             item_name = item.split(".")[0]
             item_format = item.split(".")[1]
-
-            os.chdir(current_working_dir)
-            with open(exceptions, "r") as file:
+            
+            with open(exceptions) as file:
                 status = file.read().find(item_name)
             
             if status == -1 and item_format != format:
-                capitalized_name = f"{item_name.capitalize()}.{item_format}"
-                os.chdir("D:/New Folder/")
-                os.rename(item, capitalized_name)
+                os.rename(item, item.capitalize())
 
             if item_format == format:
-                changed_name = f"{file_name_counter}.{item_format}"
-                os.chdir("D:/New Folder/")
-                os.rename(item, changed_name)
+                os.rename(item, f"{file_name_counter}.{item_format}")
                 file_name_counter += 1
 
+# ========================= take input from user =========================
 # path = input("enter the path: ")
 # exceptions = input("provide exceptions: ")
 # format = input("file format: ")
+
+# ========================= example values =========================
 path = "D:/New Folder/"
-exceptions = "check.txt"
+exceptions = r"D:\VK Google Drive\VK__DATA (abcd)\1.     CODING\Programming Language\Python\1. Py Codes\Python course 1\check.txt"
 format = "txt"
 
-current_working_dir = os.getcwd()
-
 Folder_Prettifier(path, exceptions, format)
-
 os.chdir(current_working_dir)
