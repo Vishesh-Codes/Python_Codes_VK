@@ -4,11 +4,13 @@
 
 import requests
 import json
+import vkk_module as vk
 
 def get_latest_news():
-    news = requests.get("https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=fc865a01462e4858b70fe820f5daf602")
+    news = requests.get(f"https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey={vk.API_Key}")
     parsed = json.loads(news.content)
     return parsed
+
 
 
 def speak(str):
