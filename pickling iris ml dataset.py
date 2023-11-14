@@ -5,7 +5,9 @@
 Keyword for searching on web:   uci ml repository
 Source of data: https://archive.ics.uci.edu/
 
-In this exercise, I have obtained list of lists of dataset of iris by using zipfile module because the downloadable file is provided in zip format. So, without extracting the zip file, I have read the data from that and made list of lists.
+In this exercise, I have obtained list of lists of dataset of iris by using 
+zipfile module because the downloadable file is provided in zip format. So, 
+without extracting the zip file, I have read the data from that and made list of lists.
 Then used 'pickle' module for pickling and unpickling
 """
 # importing built-in modules zipfile and pickle
